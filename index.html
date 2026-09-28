@@ -285,11 +285,11 @@ body.anim .reveal.in{opacity:1;transform:none}
       <div class="info teal">
         <h4>馬略卡住宿（未訂）</h4>
         <ul>
-          <li><b>Palma 3 晚</b>　9/30、10/1、10/2 · 老城或 Santa Catalina 區</li>
-          <li><b>Sóller／Deià 1 晚</b>　10/3 · 配租車與週六市集</li>
-          <li><b>Santanyí／Cala d'Or 1 晚</b>　10/4 · 果凍海旁，隔天早上直接下水</li>
+          <li>下面是<b>路線推出來的結果</b>，不是排行程的前提。真要改，路線先改</li>
+          <li><b>Palma 3 晚</b>　9/30、10/1、10/2 · 老城或 Santa Catalina 區，不用車</li>
+          <li><b>Sóller 或 Deià 2 晚</b>　10/3、10/4 · 留得住 Deià 的日落與清晨</li>
           <li><b>Palma 或機場旁 1 晚</b>　10/5 · 隔天 05:45 班機，04:00 出門</li>
-          <li>租車只要 <b>10/3–10/5 三天</b>，理由見下面</li>
+          <li>整趟<b>只換 2 次旅館</b>，租車只要 10/3–10/5 三天</li>
         </ul>
       </div>
     </div>
@@ -317,7 +317,7 @@ body.anim .reveal.in{opacity:1;transform:none}
           <tr><td>10/1 四</td><td>西南</td><td>Palma 老城：大教堂、王宮</td><td class="dt">—</td></tr>
           <tr><td>10/2 五</td><td>西南</td><td>Palma：市場、美術館、逛街</td><td class="dt">—</td></tr>
           <tr><td>10/3 六</td><td><b>西北中段</b></td><td>Sóller、Fornalutx、Port de Sóller</td><td class="num">取車</td></tr>
-          <tr><td>10/4 日</td><td><b>西北南段 → 東南</b></td><td>Valldemossa、Deià、Sa Foradada → 轉場 Santanyí</td><td class="num">開車</td></tr>
+          <tr><td>10/4 日</td><td><b>西北南段</b></td><td>Valldemossa、Sa Foradada、Deià + Cala Deià</td><td class="num">開車</td></tr>
           <tr><td>10/5 一</td><td><b>東南 → 南</b></td><td>Cala Mondragó、Caló des Moro、Es Trenc</td><td class="num">還車</td></tr>
           <tr><td>10/6 二</td><td>西南</td><td>機場 05:45</td><td class="dt">—</td></tr>
         </tbody>
@@ -630,22 +630,23 @@ var DAYS = [
        ["住","Sóller 或 Deià"]],
     fold:["為什麼 Sóller 一定排在週六？","Sóller 的市集<b>只有週六</b>。這是整個 Tramuntana 山線最熱鬧的一天，廣場整圈擺攤。其他天去只剩空廣場跟那台 1913 年的木造電車。"] },
 
-  { d:"2026-10-04", m:"Oct", n:"4", w:"週日", r:"西北南段 → 東南 · 開車", t:"山線走完，開去果凍海", isla:true,
-    tags:["nat","sea","car"], tagTxt:["山線","游泳","轉場"],
+  { d:"2026-10-04", m:"Oct", n:"4", w:"週日", r:"西北南段 · Tramuntana · 開車", t:"海岸線與德亞灣", isla:true,
+    tags:["nat","sea","food"], tagTxt:["山線","游泳","一星"],
     f:[["上午","<b>Valldemossa</b> 的 Reial Cartoixa <span class='eur'>€12.50</span><em>蕭邦與喬治桑 1838 年在此過冬，那台鋼琴還在 · 含 15 分鐘鋼琴演奏</em>"],
        ["中午","<b>Son Marroig</b> + <b>Sa Foradada</b><em>中間破了一個洞的岩石海岬 · 走下去單程 40 分</em>"],
-       ["下午","<b>Deià</b> + <b>Cala Deià</b> 游泳<em>礫石小灣 · 也可午餐 Ca's Patró March，懸崖上，要訂</em>"],
-       ["17:00","<b>開往東南角</b><em>Deià → Santanyí 約 1 小時 45 分</em>"],
-       ["晚","住 <b>Santanyí</b> 或 <b>Cala d'Or</b><em>明早直接下海，不用再開兩小時</em>"]] },
+       ["下午","<b>Deià</b> + <b>Cala Deià</b> 游泳<em>礫石小灣 · 午餐可訂 Ca's Patró March，在懸崖上</em>"],
+       ["日落","<b>Sa Foradada 或 Deià 看日落</b><em>住山上才留得住的時段</em>"],
+       ["晚","<b>Es Racó d'es Teix</b>（米其林一星）<em>要訂 · 或 Sebastian</em>"]] },
 
   { d:"2026-10-05", m:"Oct", n:"5", w:"週一", r:"東南 · 果凍海 · 還車", t:"果凍海，然後回 Palma", isla:true,
     tags:["sea","nat","shop"], tagTxt:["果凍海","游泳","還車"],
-    f:[["09:00","<b>Cala Mondragó + S'Amarador</b><em>首選。自然公園內，正規停車場、沒有進入管制 · 水色跟 Caló des Moro 同級但沙灘大得多</em>"],
-       ["11:00","<b>Caló des Moro</b>（加碼）<em>IG 上最紅的那個，只有 20 公尺寬 · 見下方管制說明</em>"],
+    f:[["08:30","<b>從山上出發</b><em>Sóller／Deià → Cala Mondragó 約 1 小時 40 分</em>"],
+       ["10:30","<b>Cala Mondragó + S'Amarador</b><em>首選。自然公園內，正規停車場、沒有進入管制 · 水色跟 Caló des Moro 同級但沙灘大得多</em>"],
+       ["12:00","<b>Caló des Moro</b>（加碼）<em>IG 上最紅的那個，只有 20 公尺寬 · 見下方管制說明</em>"],
        ["13:00","<b>Santanyí</b> 老城午餐<em>金黃砂岩小鎮，週三與週六有市集</em>"],
        ["15:00","<b>Es Trenc</b>（順路）<em>南岸長白沙灘，像加勒比海 · 淺水區水溫更暖</em>"],
        ["傍晚","還車 → 回 Palma<em>隔天 05:45 的班機，住機場旁比較實際</em>"]],
-    fold:["果凍海怎麼看才不會撲空","<b>10 月初是最好的時候</b>：水溫還有 22–23°C，而歐洲人的假期最後一週剛結束，這幾個 cala 幾乎是空的。<b>清澈度最好的時間是早上</b>，所以前一晚一定要住在東南角，不要從 Sóller 開兩小時過來。<br><br><b>Caló des Moro 有管制</b>：6 月 1 日起非本地車輛禁止進入聯外道路，要停在 Cala Llombards 走 1.5 公里。10 月初是否解除要現場確認，夏季的接駁巴士這時通常停駛。<br><br><b>所以主力放 Cala Mondragó</b>：在自然公園內，有正規停車場、沒有管制，水色同級而且沙灘大得多。Caló des Moro 當加碼，去得成算賺到。"] },
+    fold:["果凍海怎麼看才不會撲空","<b>10 月初是最好的時候</b>：水溫還有 22–23°C，而歐洲人的假期最後一週剛結束，這幾個 cala 幾乎是空的。所以<b>不必為了搶清晨的停車位多換一次旅館</b>：10:30 到就夠了，旺季那種「不到八點就沒位」的壓力這時候不存在。<br><br><b>Caló des Moro 有管制</b>：6 月 1 日起非本地車輛禁止進入聯外道路，要停在 Cala Llombards 走 1.5 公里。10 月初是否解除要現場確認，夏季的接駁巴士這時通常停駛。<br><br><b>所以主力放 Cala Mondragó</b>：在自然公園內，有正規停車場、沒有管制，水色同級而且沙灘大得多。Caló des Moro 當加碼，去得成算賺到。"] },
 
   { d:"2026-10-06", m:"Oct", n:"6", w:"週二", r:"西南 · Palma → London", t:"回倫敦", isla:true,
     tags:["car"], tagTxt:["移動日"],
@@ -659,7 +660,7 @@ var CHECKLIST = [
   { id:"pm",    t:"加泰隆尼亞音樂宮 ×2",           s:"自助導覽即可，選早場。免費只能進一樓 Foyer",  p:"€32–40" },
   { id:"tf",    t:"再買 2 張 T-familiar",         s:"地鐵站售票機，有中文介面，收信用卡",  p:"€23" },
   { id:"host",  t:"問房東：9/30 行李寄放、有無電梯", s:"退房 11:00，班機 16:25，中間五個半小時" },
-  { id:"hotel", t:"馬略卡住宿 6 晚",              s:"Palma 3 + Sóller／Deià 1 + Santanyí／Cala d'Or 1 + 機場旁 1" },
+  { id:"hotel", t:"馬略卡住宿 6 晚",              s:"Palma 3 + Sóller／Deià 2 + 機場旁 1 · 只換 2 次" },
   { id:"car",   t:"馬略卡租車 10/3–10/5",         s:"淡季小車約 €25–35／天",  p:"€75–105" },
   { id:"teix",  t:"訂位 Es Racó d'es Teix",       s:"Deià · 米其林一星 · 10/4 晚" },
   { id:"march", t:"訂位 Ca's Patró March",        s:"Cala Deià 懸崖上 · 午餐" },
