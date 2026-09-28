@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f5efe3">
+<title>巴塞隆納 &amp; 馬略卡行程表</title>
+</head>
+<body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5efe3; --paper-2:#efe6d4; --paper-3:#e9dec8;
+  --ink:#241d17; --ink-soft:#5d5347; --ink-faint:#8a7f70;
+  --accent:#a23b27; --accent-deep:#7e2b1b; --teal:#234d44; --gold:#b08641;
+  --line:rgba(36,29,23,.14); --line-soft:rgba(36,29,23,.08);
+  --shadow:0 1px 0 rgba(36,29,23,.04), 0 18px 40px -28px rgba(36,29,23,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:74px;-webkit-text-size-adjust:100%}
+body{font-family:"Noto Sans TC",system-ui,sans-serif;color:var(--ink);background-color:var(--paper);
+  background-image:radial-gradient(120% 80% at 100% 0%, rgba(176,134,65,.10) 0%, transparent 50%),radial-gradient(120% 80% at 0% 100%, rgba(35,77,68,.08) 0%, transparent 45%);
+  background-attachment:fixed;line-height:1.75;letter-spacing:.01em;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.4;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+a{color:inherit}
+button{font-family:inherit}
+
+.topbar{position:sticky;top:0;z-index:50;background:rgba(245,239,227,.82);backdrop-filter:blur(12px) saturate(1.2);border-bottom:1px solid var(--line)}
+.topbar .bar{display:flex;align-items:center;justify-content:space-between;height:58px;gap:18px;max-width:880px;margin:0 auto;padding:0 24px}
+.brand{font-family:"Fraunces",serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:12px;color:var(--accent)}
+.navlinks{display:flex;gap:20px;font-size:13px;color:var(--ink-soft);font-weight:500}
+.navlinks a{text-decoration:none;position:relative;white-space:nowrap;transition:color .2s}
+.navlinks a:hover{color:var(--accent)}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:var(--accent);transition:width .25s}
+.navlinks a:hover::after{width:100%}
+@media(max-width:860px){.navlinks{display:none}}
+
+.hero{padding:74px 0 44px}
+.eyebrow{font-family:"Fraunces",serif;font-style:italic;font-size:17px;color:var(--accent);margin-bottom:18px}
+.eyebrow::before{content:"";display:inline-block;width:34px;height:1px;background:var(--gold);vertical-align:middle;margin-right:12px;transform:translateY(-3px)}
+h1.title{font-family:"Noto Serif TC","Fraunces",serif;font-weight:900;font-size:clamp(38px,8vw,72px);line-height:1.04;letter-spacing:-.01em}
+h1.title .amp{font-family:"Fraunces",serif;font-style:italic;font-weight:500;color:var(--accent);padding:0 .12em}
+.subtitle{font-family:"Fraunces",serif;font-size:clamp(18px,2.6vw,22px);color:var(--ink-soft);margin-top:18px;max-width:52ch;line-height:1.5}
+.meta-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:rgba(255,255,255,.35);padding:7px 14px;border-radius:100px;font-size:12.5px;font-weight:500;color:var(--ink-soft)}
+.chip b{color:var(--accent);font-weight:700}
+.chip .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+/* today */
+.today{margin-top:34px;border:1px solid rgba(176,134,65,.5);border-radius:18px;background:linear-gradient(180deg,rgba(176,134,65,.15),rgba(255,255,255,.34));box-shadow:var(--shadow);padding:22px 24px}
+.today .k{font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--gold);letter-spacing:.04em}
+.today h3{font-family:"Noto Serif TC",serif;font-weight:700;font-size:21px;margin:5px 0 14px;line-height:1.3}
+.today ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.today li{position:relative;padding-left:62px;font-size:14px;color:var(--ink-soft);line-height:1.65;min-height:22px}
+.today .when{position:absolute;left:0;top:1px;font-size:11px;font-weight:700;color:var(--accent-deep);background:rgba(255,255,255,.62);border:1px solid var(--line-soft);border-radius:6px;padding:2px 0;width:50px;text-align:center}
+.today li b{color:var(--ink);font-weight:700}
+@media(max-width:560px){.today li{padding-left:56px}}
+
+section{padding:46px 0;border-top:1px solid var(--line-soft)}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:26px}
+.sec-num{font-family:"Fraunces",serif;font-style:italic;font-size:16px;color:var(--gold)}
+h2{font-family:"Noto Serif TC",serif;font-weight:700;font-size:clamp(24px,4.4vw,32px);line-height:1.2}
+.sec-sub{color:var(--ink-soft);font-size:15px;margin-top:6px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px}
+.stat{background:rgba(255,255,255,.4);border:1px solid var(--line);border-radius:13px;padding:14px 10px;text-align:center}
+.stat .k{font-family:"Fraunces",serif;font-style:italic;font-size:11.5px;color:var(--ink-faint)}
+.stat .v{font-weight:700;font-size:14.5px;margin-top:5px}
+.stat .v small{display:block;font-size:11px;font-weight:500;color:var(--ink-soft);margin-top:2px}
+@media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* timeline */
+.timeline{position:relative}
+.tld{display:grid;grid-template-columns:64px 1fr;gap:18px;padding-bottom:26px;position:relative}
+.tld-rail{position:relative;display:flex;justify-content:center}
+.tld-rail::before{content:"";position:absolute;top:10px;bottom:-26px;left:50%;transform:translateX(-50%);width:2px;background:linear-gradient(var(--gold),rgba(176,134,65,.22))}
+.tld:last-child .tld-rail::before{display:none}
+.tld-badge{position:relative;z-index:2;width:52px;height:52px;border-radius:50%;background:var(--accent);color:#f6efe1;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 18px -8px rgba(162,59,39,.7);border:3px solid var(--paper)}
+.tld-badge span{font-family:"Fraunces",serif;font-style:italic;font-size:8.5px;letter-spacing:.12em;opacity:.9;line-height:1}
+.tld-badge b{font-family:"Noto Serif TC",serif;font-size:21px;line-height:1.05}
+.tld.isla .tld-badge{background:var(--teal);box-shadow:0 8px 18px -8px rgba(35,77,68,.7)}
+.tld.past .tld-badge{background:#9a9082;box-shadow:none}
+.tld.past .tld-main{opacity:.62}
+.tld.now .tld-main{border-color:rgba(176,134,65,.6);background:linear-gradient(180deg,rgba(176,134,65,.14),rgba(255,255,255,.3))}
+.tld-main{background:linear-gradient(180deg,rgba(255,255,255,.52),rgba(255,255,255,.18));border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;padding-bottom:20px}
+.tld-region{font-family:"Fraunces",serif;font-style:italic;letter-spacing:.06em;font-size:12px;color:var(--accent);padding:16px 22px 0}
+.tld.isla .tld-region{color:var(--teal)}
+.tld-title{font-family:"Noto Serif TC",serif;font-weight:700;font-size:19.5px;line-height:1.35;padding:2px 22px 0}
+.tld-flow{list-style:none;padding:13px 22px 0;display:flex;flex-direction:column;gap:10px}
+.tld-flow li{position:relative;padding-left:62px;font-size:14px;color:var(--ink-soft);line-height:1.66;min-height:22px}
+.tld-flow .when{position:absolute;left:0;top:1px;font-size:11px;font-weight:700;color:var(--teal);background:var(--paper-3);border:1px solid var(--line-soft);border-radius:6px;padding:2px 0;width:50px;text-align:center;letter-spacing:.02em}
+.tld.isla .tld-flow .when{color:var(--accent)}
+.tld-flow li b{color:var(--ink);font-weight:700}
+.tld-flow li em{font-style:normal;display:block;color:var(--ink-faint);font-size:12.5px;margin-top:2px;line-height:1.6}
+.tld-flow li .eur{color:var(--accent-deep);font-weight:700;font-family:"Fraunces",serif;font-size:12.5px;white-space:nowrap}
+.tld-flow li .free{color:#2f6b45;font-weight:600;font-size:12px}
+.tld-tags{display:flex;flex-wrap:wrap;gap:6px;padding:14px 22px 0}
+.tag{font-size:11px;font-weight:600;letter-spacing:.03em;padding:3px 10px;border-radius:6px;background:var(--paper-3);color:var(--ink-soft);border:1px solid var(--line-soft)}
+.tag.art{background:#e9e6f0;color:#534a73}.tag.hist{background:#f0e9d8;color:#7a662f}
+.tag.food{background:#f3e3d5;color:#9c4a1e}.tag.shop{background:#f1e6dd;color:#8a4a2a}
+.tag.nat{background:#e4ede2;color:#41663f}.tag.car{background:#e6ecef;color:#3a5560}
+.tag.ok{background:rgba(60,125,82,.16);color:#2f6b45;border-color:rgba(60,125,82,.35)}
+.tag.sea{background:#e2ecf0;color:#2d5866}
+
+details.fold{margin:16px 22px 0;border:1px solid rgba(162,59,39,.3);border-radius:12px;background:rgba(162,59,39,.045);overflow:hidden}
+details.fold>summary{list-style:none;cursor:pointer;padding:11px 15px;font-size:13px;font-weight:700;color:var(--accent);display:flex;align-items:center;gap:9px}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;border-radius:50%;background:var(--accent);color:var(--paper);font-size:14px;font-weight:700;line-height:1;flex:none}
+details.fold[open]>summary::before{content:"−"}
+details.fold>summary .hint{margin-left:auto;font-weight:500;font-size:11.5px;color:var(--ink-faint);font-style:italic}
+details.fold .fb{padding:13px 15px 16px;font-size:13px;color:var(--ink-soft);line-height:1.8;border-top:1px solid rgba(162,59,39,.18)}
+details.fold .fb b{color:var(--ink)}
+@media(max-width:560px){details.fold{margin:14px 16px 0}}
+
+/* plan switch */
+.plansw{display:flex;gap:8px;padding:14px 22px 0;flex-wrap:wrap}
+.psw{font-family:"Fraunces",serif;font-style:italic;font-weight:600;font-size:13px;border:1px solid var(--line);background:rgba(255,255,255,.45);color:var(--ink-soft);border-radius:100px;padding:7px 16px;cursor:pointer;transition:all .2s}
+.psw[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#f6efe1;box-shadow:0 8px 20px -12px rgba(162,59,39,.9)}
+
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.cards2{grid-template-columns:1fr}}
+.info{background:rgba(255,255,255,.4);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.info h4{font-family:"Noto Serif TC",serif;font-size:17px;margin-bottom:12px}
+.info.teal h4{color:var(--teal)}
+.info ul{list-style:none;display:grid;gap:9px}
+.info li{font-size:14px;color:var(--ink-soft);padding-left:16px;position:relative;line-height:1.6}
+.info li::before{content:"→";position:absolute;left:0;color:var(--gold);font-weight:700}
+.info li b{color:var(--ink)}
+.info li.done{opacity:.5}
+.info li.done b{text-decoration:line-through}
+.info li.done::before{content:"✓";color:#3c7d52}
+
+/* booking checklist */
+.book{display:grid;gap:12px}
+.bk{display:grid;grid-template-columns:26px 1fr auto;gap:16px;align-items:start;background:rgba(255,255,255,.45);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);cursor:pointer;transition:border-color .2s}
+.bk:hover{border-color:rgba(162,59,39,.4)}
+.bk input{width:19px;height:19px;margin-top:2px;accent-color:var(--accent);cursor:pointer}
+.bk h4{font-size:15.5px;font-weight:700;margin-bottom:3px}
+.bk p{font-size:13px;color:var(--ink-soft);line-height:1.65}
+.bk .amt{font-family:"Fraunces",serif;font-weight:600;color:var(--accent);font-size:15px;white-space:nowrap;text-align:right}
+.bk.urgent{border-color:rgba(162,59,39,.42);background:linear-gradient(180deg,rgba(162,59,39,.07),rgba(255,255,255,.4))}
+.bk.done{border-color:rgba(60,125,82,.32);background:linear-gradient(180deg,rgba(60,125,82,.08),rgba(255,255,255,.35))}
+.bk.done .amt{color:#2f6b45}
+.bk.done h4{text-decoration:line-through;color:var(--ink-faint)}
+@media(max-width:600px){.bk{grid-template-columns:26px 1fr}.bk .amt{grid-column:2;text-align:left;margin-top:6px}}
+.sync{display:flex;align-items:center;gap:8px;margin-top:14px;font-family:"Fraunces",serif;font-style:italic;font-size:12.5px;color:var(--ink-faint)}
+.sdot{width:7px;height:7px;border-radius:50%;background:var(--ink-faint)}
+.sdot.live{background:#3c7d52}
+
+/* expenses */
+.xform{display:grid;grid-template-columns:1fr 104px 84px;gap:9px;margin-bottom:9px}
+.xform2{display:grid;grid-template-columns:1fr 1fr auto;gap:9px;margin-bottom:18px}
+.xform input,.xform select,.xform2 input,.xform2 select{font-family:"Noto Sans TC",sans-serif;font-size:13.5px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.55);color:var(--ink);min-width:0}
+.xform input:focus,.xform select:focus,.xform2 select:focus{outline:2px solid rgba(162,59,39,.4);outline-offset:1px}
+.xbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:700;color:#f6efe1;background:var(--accent);border:1px solid var(--accent);border-radius:100px;padding:9px 20px;box-shadow:0 8px 20px -12px rgba(162,59,39,.9);cursor:pointer;transition:all .2s}
+.xbtn:hover{background:var(--accent-deep);transform:translateY(-1px)}
+@media(max-width:600px){
+  .xform{grid-template-columns:1fr 1fr}
+  .xform input:first-child{grid-column:1/-1}
+  .xform2{grid-template-columns:1fr 1fr}
+  .xform2 .xbtn{grid-column:1/-1;justify-content:center}
+}
+.ctab{width:100%;border-collapse:collapse;font-size:13px;margin-top:4px}
+.ctab caption{text-align:left;font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--accent);font-size:13px;padding:10px 0 7px}
+.ctab th{text-align:left;font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--ink-faint);font-size:11.5px;letter-spacing:.04em;padding:6px 10px;border-bottom:1px solid var(--line)}
+.ctab td{padding:9px 10px;border-bottom:1px solid var(--line-soft);vertical-align:top;line-height:1.55;color:var(--ink-soft)}
+.ctab td:first-child{color:var(--ink);font-weight:600}
+.ctab td.num{text-align:right;font-family:"Fraunces",serif;font-weight:600;color:var(--accent-deep);white-space:nowrap}
+.ctab .dt{color:var(--ink-faint);font-size:11.5px;white-space:nowrap}
+.ctab .del{background:none;border:none;color:var(--ink-faint);font-size:17px;line-height:1;cursor:pointer;padding:0 4px}
+.ctab .del:hover{color:var(--accent)}
+.ctab.paid caption{color:#2f6b45}
+.ctab.paid td.num{color:#2f6b45}
+.scrollx{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.bigsum{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+@media(max-width:560px){.bigsum{grid-template-columns:1fr}}
+.bs{border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;background:rgba(255,255,255,.42);box-shadow:var(--shadow)}
+.bs.live{border-color:rgba(176,134,65,.5);background:linear-gradient(180deg,rgba(176,134,65,.14),rgba(255,255,255,.34))}
+.bs .k{font-family:"Fraunces",serif;font-style:italic;font-size:12px;color:var(--ink-faint)}
+.bs .v{font-family:"Noto Serif TC",serif;font-weight:700;font-size:21px;margin-top:6px;line-height:1.2}
+.bs.live .v{color:var(--gold)}
+.bs .n2{font-size:11.5px;color:var(--ink-faint);margin-top:4px}
+.empty{border:1px dashed var(--line);border-radius:14px;padding:22px;text-align:center;font-family:"Fraunces",serif;font-style:italic;color:var(--ink-faint);font-size:14px;background:rgba(255,255,255,.25)}
+
+/* warn */
+.warnbox{border:1px solid rgba(162,59,39,.45);border-radius:16px;background:linear-gradient(180deg,rgba(162,59,39,.09),rgba(255,255,255,.36));padding:24px;box-shadow:var(--shadow)}
+.warnbox h4{font-family:"Noto Serif TC",serif;font-size:18px;color:var(--accent-deep);margin-bottom:10px}
+.warnbox p{font-size:14px;color:var(--ink-soft);line-height:1.75}
+.warnbox p+p{margin-top:9px}
+.warnbox b{color:var(--ink)}
+.warnbox .list{font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--accent-deep);margin-top:10px;padding:11px 14px;background:rgba(255,255,255,.45);border-radius:10px;line-height:1.8}
+
+footer{padding:48px 0 70px;border-top:1px solid var(--line);text-align:center}
+footer .compass{font-size:26px;color:var(--gold);margin-bottom:12px}
+footer .fl{font-family:"Fraunces",serif;font-style:italic;color:var(--ink-faint);font-size:14px}
+footer .fn{font-size:12px;color:var(--ink-faint);margin-top:10px;line-height:1.8}
+
+body.anim .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+body.anim .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){body.anim .reveal{opacity:1!important;transform:none!important;transition:none}}
+@media(max-width:560px){
+  .hero{padding:54px 0 34px}
+  .tld{grid-template-columns:50px 1fr;gap:12px}
+  .tld-badge{width:46px;height:46px}
+  .tld-flow li{padding-left:56px}
+}
+</style>
+
+<div class="topbar">
+  <div class="bar">
+    <div class="brand">Barcelona · Mallorca 2026</div>
+    <nav class="navlinks">
+      <a href="#overview">總覽</a>
+      <a href="#trip">行程</a>
+      <a href="#metro">交通</a>
+      <a href="#booking">訂票</a>
+      <a href="#costs">花費</a>
+      <a href="#eat">吃逛</a>
+      <a href="#tips">提醒</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Itinerary · 26 Sep – 6 Oct 2026</div>
+    <h1 class="title">巴塞隆納<span class="amp">&amp;</span>馬略卡<br>十一天</h1>
+    <p class="subtitle">高第逝世百年的那一年：聖家堂中央塔今年完工，172.5 公尺，成為世界最高的教堂。四晚在巴塞隆納看建築與吃，六晚在馬略卡租車走 Tramuntana 山線。</p>
+    <div class="meta-chips">
+      <span class="chip"><span class="dot"></span>巴塞隆納 <b>4 晚 · Poble-sec</b></span>
+      <span class="chip"><span class="dot"></span>馬略卡 <b>6 晚 · Palma + Sóller</b></span>
+      <span class="chip"><span class="dot"></span>機票 <b>三段已訂</b></span>
+      <span class="chip"><span class="dot"></span>人數 <b>2 人 · V + Hsin</b></span>
+    </div>
+
+    <div class="today">
+      <div class="k" id="tdK">Today</div>
+      <h3 id="tdT">—</h3>
+      <ul id="tdL"></ul>
+    </div>
+  </header>
+
+  <section id="overview" class="reveal">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <div><h2>總覽</h2><p class="sec-sub">三段機票全部訂好，住宿只剩馬略卡沒訂。</p></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="k">Barcelona</div><div class="v">4 晚<small>9/26 – 9/30</small></div></div>
+      <div class="stat"><div class="k">Mallorca</div><div class="v">6 晚<small>9/30 – 10/6</small></div></div>
+      <div class="stat"><div class="k">Weather</div><div class="v">25–27°C<small>海溫 24°C</small></div></div>
+      <div class="stat"><div class="k">Flights</div><div class="v">3 段<small>全部已訂</small></div></div>
+    </div>
+
+    <div class="scrollx">
+      <table class="ctab paid">
+        <caption>航班 · 三段全部已訂</caption>
+        <thead><tr><th>日期</th><th>航段</th><th>時間</th><th>航班</th></tr></thead>
+        <tbody>
+          <tr><td>9/26 六</td><td>倫敦 Stansted → 巴塞隆納</td><td class="dt">15:25 – 18:40</td><td class="num">FR9014</td></tr>
+          <tr><td>9/30 三</td><td>巴塞隆納 → 帕爾馬</td><td class="dt">16:25 – 17:25</td><td class="num">FR3070</td></tr>
+          <tr><td>10/6 二</td><td>帕爾馬 → 倫敦 Stansted</td><td class="dt">05:45 – 07:20</td><td class="num">FR26</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cards2" style="margin-top:22px">
+      <div class="info">
+        <h4>巴塞隆納住宿（已訂）</h4>
+        <ul>
+          <li><b>Poble-sec</b>　Sants-Montjuïc 區，走 3–5 分到 Paral·lel 站</li>
+          <li><b>Check-out 11:00</b>（9/30）</li>
+          <li>走 3–5 分到 <b>Paral·lel 站</b>（L2／L3），幾乎所有景點都是直達車</li>
+          <li>樓下就是 <b>Carrer de Blai</b> 串籤街，走路 5 分</li>
+        </ul>
+      </div>
+      <div class="info teal">
+        <h4>馬略卡住宿（未訂）</h4>
+        <ul>
+          <li><b>Palma 3 晚</b>　老城或 Santa Catalina 區</li>
+          <li><b>Sóller／Deià 2 晚</b>　山區，配 10/3–10/5 的租車</li>
+          <li><b>機場旁 1 晚</b>　10/6 是 05:45 的班機，04:00 出門</li>
+          <li>租車 10/3–10/5，淡季小車約 <b>€25–35／天</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="trip" class="reveal">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <div><h2>行程</h2><p class="sec-sub">紅色是巴塞隆納，綠色是馬略卡。過去的日子會自動變灰。</p></div>
+    </div>
+    <div class="timeline" id="tl"></div>
+  </section>
+
+  <section id="metro" class="reveal">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <div><h2>交通</h2><p class="sec-sub">T-familiar 是兩人共用 8 趟，不是各 8 趟。</p></div>
+    </div>
+
+    <div class="scrollx">
+      <table class="ctab">
+        <caption>巴塞隆納交通票比較</caption>
+        <thead><tr><th>方案</th><th>共同移動</th><th>備註</th><th>價格</th></tr></thead>
+        <tbody>
+          <tr><td>T-familiar ×2</td><td>8 次</td><td>夠用有餘，推薦</td><td class="num">€23.00</td></tr>
+          <tr><td>T-familiar ×1 + 走路</td><td>4 次</td><td>省一半，但要走</td><td class="num">€11.50</td></tr>
+          <tr><td>T-casual ×2（各一張）</td><td>10 次</td><td>每趟最便宜，額度用不完</td><td class="num">€26.00</td></tr>
+          <tr><td>單程票</td><td>—</td><td>兩人一次移動 €5.80</td><td class="num">€2.90／人</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cards2" style="margin-top:22px">
+      <div class="info">
+        <h4>從住處出發（Paral·lel 站）</h4>
+        <ul>
+          <li><b>L2 直達</b>　Sagrada Família，5 站</li>
+          <li><b>L3 直達</b>　Passeig de Gràcia 4 站、Liceu 2 站、Diagonal 6 站、Vallcarca（Park Güell）8 站</li>
+          <li><b>走路</b>　Carrer de Blai 5 分、Plaça d'Espanya 10 分、MNAC 15 分、Rambla 25 分</li>
+          <li><b>75 分鐘轉乘免費</b>，不要重複刷。刷錯就白白多扣 2 趟</li>
+        </ul>
+      </div>
+      <div class="info">
+        <h4>9/30 去機場</h4>
+        <ul>
+          <li><b>Aerobús A2</b>　走 10 分到 Plaça d'Espanya 直達 T2，€7.25／人，有行李架。拖行李推薦這個</li>
+          <li><b>R2 Nord 火車</b>　Poble Sec → L3 → Sants → 火車 → T2，交通卡只扣 1 趟</li>
+          <li><b>地鐵 L9</b>　機場站交通卡無效，要另付 €5.90</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="reveal">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <div><h2>訂票清單</h2><p class="sec-sub">打勾會存在這台裝置的瀏覽器裡。</p></div>
+    </div>
+    <div class="book" id="bk"></div>
+    <div class="sync"><span class="sdot" id="bkDot"></span><span id="bkS">只存在這台裝置</span></div>
+  </section>
+
+  <section id="costs" class="reveal">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <div><h2>花費</h2><p class="sec-sub">記下誰付了什麼，下面自動算誰欠誰。英鎊用 1 GBP = 1.15 EUR 粗估。</p></div>
+    </div>
+
+    <div class="xform">
+      <input id="xDesc" type="text" placeholder="項目，例如 Casa Batlló 門票" maxlength="60">
+      <input id="xAmt" type="text" inputmode="decimal" placeholder="金額">
+      <select id="xCur" aria-label="幣別"><option value="EUR">EUR</option><option value="GBP">GBP</option></select>
+    </div>
+    <div class="xform2">
+      <select id="xWho" aria-label="誰付的"><option value="V">V 付的</option><option value="H">Hsin 付的</option></select>
+      <select id="xSplit" aria-label="怎麼分"><option value="half">兩人均分</option><option value="V">V 獨享</option><option value="H">Hsin 獨享</option></select>
+      <button class="xbtn" id="xAdd">加入一筆</button>
+    </div>
+
+    <div id="xList"></div>
+    <div class="bigsum" id="xSum"></div>
+    <div class="sync"><span class="sdot" id="xDot"></span><span id="xS">只存在這台裝置</span></div>
+  </section>
+
+  <section id="eat" class="reveal">
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <div><h2>吃</h2><p class="sec-sub">已經去過的打勾畫掉。</p></div>
+    </div>
+    <div class="cards2">
+      <div class="info">
+        <h4>巴塞隆納</h4>
+        <ul>
+          <li class="done"><b>La Flauta</b>　9/26 已去</li>
+          <li class="done"><b>Xurreria Trebol</b>　Còrsega 341 · 1955 年吉拿棒老店 · 9/27</li>
+          <li class="done"><b>Lucciano's</b>　Rambla de Catalunya 17 · 9/27</li>
+          <li class="done"><b>Cervecería Catalana</b>　Mallorca 236 · 9/27</li>
+          <li><b>La Pepita</b>　Còrsega 343 · 經典 tapas，牆上滿是客人手寫留言 · 排 9/28 晚</li>
+          <li><b>Morreig</b>　Verdi 25，Gràcia · 甜點與自製 gelato · 排 9/28 晚</li>
+          <li><b>Jon Cake</b>　Sant Pere Més Baix 36 · 巴斯克焦香起司蛋糕 · 10:00–20:00</li>
+          <li><b>Cuines Santa Caterina</b>　市場裡的餐廳，直接用市場食材 · 排 9/29 午</li>
+          <li><b>Time Out Market</b>　Moll d'Espanya 5，Maremagnum 2 樓 · 排 9/29 晚</li>
+          <li><b>Suru</b>　Casanova 134 · 自然酒 + robata 炭烤 · 這頓比較貴，要訂位</li>
+        </ul>
+      </div>
+      <div class="info teal">
+        <h4>馬略卡</h4>
+        <ul>
+          <li><b>Ca'n Joan de s'Aigo</b>　Palma 老城 · 1700 年 · ensaïmada 配濃巧克力與杏仁冰</li>
+          <li><b>Ca'n Boqueta</b>　Sóller · 本地食材小館</li>
+          <li><b>Es Racó d'es Teix</b>　Deià · 米其林一星 · 要訂</li>
+          <li><b>Ca's Patró March</b>　Cala Deià 懸崖上 · 午餐 · 要訂</li>
+          <li><b>Marc Fosh／Vandal</b>　Palma · 備選，都要訂</li>
+          <li><b>必吃</b>　sobrassada、pa amb oli、tumbet、frit mallorquí、arròs brut、coca de trampó</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:42px">
+      <span class="sec-num">07</span>
+      <div><h2>逛</h2><p class="sec-sub">週日商店關門，唯一完整的逛街時段是 9/30 週三上午。</p></div>
+    </div>
+    <div class="cards2">
+      <div class="info">
+        <h4>巴塞隆納</h4>
+        <ul>
+          <li><b>Passeig de Gràcia</b>　精品＋西班牙品牌大店。9/30 上午排這裡</li>
+          <li><b>Gràcia · Carrer Verdi</b>　小店、選物、二手</li>
+          <li><b>El Born</b>　Carrer del Rec、Carrer dels Flassaders，獨立設計師密度最高</li>
+          <li><b>El Raval · Riera Baixa</b>　整條古著與二手唱片</li>
+          <li><b>La Manual Alpargatera</b>　1940 年的手工麻編鞋</li>
+          <li><b>Cereria Subirà</b>　1761 年的蠟燭行，巴塞隆納最老的店</li>
+        </ul>
+      </div>
+      <div class="info teal">
+        <h4>馬略卡</h4>
+        <ul>
+          <li><b>Rialto Living</b>　Palma · 老戲院改的選物店，島上最好逛</li>
+          <li><b>Passeig del Born</b>　Palma 精品主街</li>
+          <li><b>Carrer Sant Miquel／Sindicat</b>　本地高街</li>
+          <li><b>Inca 鞋廠 outlet</b>　Camper、Lottusse、Farrutx、Barrats 本廠</li>
+          <li><b>市集日</b>　Sóller 週六、Santa Maria 週日、Pollença 週日、Sineu 週三最本地</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="tips" class="reveal">
+    <div class="sec-head">
+      <span class="sec-num">08</span>
+      <div><h2>提醒</h2><p class="sec-sub">一條會被罰錢的，幾條會撲空的。</p></div>
+    </div>
+
+    <div class="warnbox">
+      <h4>火腿不能帶回英國</h4>
+      <p>英國自 <b>2025 年 4 月 12 日</b>起禁止旅客從歐盟攜帶豬牛羊肉與乳製品入境，2026 年仍然有效。<b>真空包、免稅店買的、已烹煮的都不行</b>，最高罰 £5,000，查到直接沒收銷毀。</p>
+      <div class="list">jamón ibérico · jamón serrano · chorizo · fuet · salchichón · lomo · morcilla · manchego 與所有乳酪</div>
+      <p>Enrique Tomás 可以現場吃、可以買了在西班牙吃完，<b>但不要帶上回倫敦的班機</b>。</p>
+    </div>
+
+    <div class="cards2" style="margin-top:20px">
+      <div class="info">
+        <h4>會撲空的時間</h4>
+        <ul>
+          <li><b>週一多數博物館休館</b>　MNAC、CaixaForum、Miró、畢卡索、Palau Güell、Colònia Güell</li>
+          <li><b>週日市場休</b>　La Boqueria、Mercat de Santa Caterina</li>
+          <li><b>週日商店關門</b>　觀光區的週日開放許可 2026 年只到 9/15</li>
+          <li><b>Cervecería Catalana</b>　不接訂位，19:30 前到</li>
+          <li><b>Bunkers del Carmel</b>　21:00 後封閉，日落約 19:50</li>
+        </ul>
+      </div>
+      <div class="info teal">
+        <h4>馬略卡</h4>
+        <ul>
+          <li><b>Cap de Formentor</b>　5/15–10/15 每天 10:00–22:00 禁私家車進 Ma-2210，罰 €100–200。要去只能 10:00 前到或搭接駁巴士</li>
+          <li><b>Mercat de Santa Catalina</b>　週一到週六只開到 15:00</li>
+          <li><b>Tramuntana 山路</b>　窄、會車要退，但路況好。Coll de Sóller 有 13 個髮夾彎</li>
+          <li><b>海溫</b>　10 月初約 24°C，游得下去</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="compass">✦</div>
+    <div class="fl">Bon viatge · 一路順風</div>
+    <p class="fn">票價為 2026 年參考價，高第景點 6–12 月另加 €2–5 百年附加費。<br>機票價格取自 Ryanair 官方訂票系統，交通票價取自 TMB 官方 2026 費率。</p>
+  </footer>
+
+</div>
+
+<script>
+var DAYS = [
+  { d:"2026-09-26", m:"Sep", n:"26", w:"週六", r:"Barcelona · Day 1", t:"落地巴塞隆納",
+    tags:["ok"], tagTxt:["已完成"],
+    f:[["18:40","<b>FR9014</b> 抵達 T2 → 進城 check in"],
+       ["21:00","晚餐 <b>La Flauta</b>"]] },
+
+  { d:"2026-09-27", m:"Sep", n:"27", w:"週日", r:"Barcelona · Day 2", t:"Passeig de Gràcia 建築日",
+    tags:["ok","art","food"], tagTxt:["已完成","建築","美食"],
+    f:[["10:00","<b>Xurreria Trebol</b> 吉拿棒<em>Còrsega 341 · 1955 年老店</em>"],
+       ["10:45","<b>Enrique Tomás</b> 買火腿<em>Diagonal 站內／Diagonal·Tusset 路口</em>"],
+       ["11:15","<b>Casa Milà</b> 外觀<em>Passeig de Gràcia 92 · 不進去</em>"],
+       ["12:00","Rambla de Catalunya 散步 → <b>Lucciano's</b>（17 號）"],
+       ["15:00","<b>Casa Batlló</b> 進場 <span class='eur'>€33 · Hsin</span><em>43 號 · 全年 08:30–22:30</em>"],
+       ["19:30","<b>Cervecería Catalana</b><em>Mallorca 236 · 不接訂位</em>"]],
+    fold:["週日為什麼只看外觀？","西班牙法律預設商店週日不營業。觀光區的週日開放許可 2026 年只到 <b>9 月 15 日</b>，9/27 已經過期，所以 Passeig de Gràcia 上的店全關。<b>餐廳、景點、博物館照常開</b>，Casa Batlló 更是全年無休 08:30–22:30。逛街全部留到 9/30 週三。"] },
+
+  { d:"2026-09-28", m:"Sep", n:"28", w:"週一", r:"Barcelona · Day 3", t:"看搶票結果",
+    tags:["art","hist"], tagTxt:["高第","現代主義"], plan:true,
+    fold:["為什麼要分兩個方案？","9/28 是<b>週一</b>，巴塞隆納多數博物館休館（MNAC、CaixaForum、Miró、畢卡索、Palau Güell、Colònia Güell 全關），所以備案不能往博物館找。<br><br>Plan B 的解法是把 9/29 的<b>加泰隆尼亞音樂宮</b>調到今天（它天天開，不受週一影響），9/29 上午再搶一次聖家堂。最後的保險是 <b>9/30 上午 09:00</b> 的場次，退房 11:00、班機 16:25，時間塞得下。<br><br>另外兩個非標準庫存值得試：<b>導覽行程是另一套票</b>，時段票顯示售完時常常還有位子；官網每天早上也會放出退票。"] },
+
+  { d:"2026-09-29", m:"Sep", n:"29", w:"週二", r:"Barcelona · Day 4", t:"老城、市場、海邊",
+    tags:["food","shop","sea"], tagTxt:["市場","逛街","海灘"],
+    f:[["上午","<b>音樂宮</b>或<b>聖家堂</b><em>看 9/28 的搶票結果決定</em>"],
+       ["11:00","<b>Jon Cake</b><em>Sant Pere Més Baix 36 · 巴斯克焦香起司蛋糕</em>"],
+       ["11:30","<b>Mercat de Santa Caterina</b><em>Av. Francesc Cambó 16 · 走 3 分 · 波浪彩瓦屋頂</em>"],
+       ["13:00","午餐 <b>Cuines Santa Caterina</b><em>市場裡的餐廳，直接用市場食材</em>"],
+       ["14:30","<b>親吻牆</b> <span class='free'>免費</span><em>主教座堂旁小廣場 · 四千張市民照片拼成的嘴唇</em>"],
+       ["15:00","<b>Enrique Tomás</b> 補貨<em>Carrer de Ferran 55</em>"],
+       ["15:30","<b>El Born 逛街</b><em>Carrer del Rec、Carrer dels Flassaders</em>"],
+       ["17:30","<b>Barceloneta 海灘</b> <span class='free'>免費</span><em>從 Born 走 15 分 · 扒手多</em>"],
+       ["19:30","<b>Time Out Market</b><em>Moll d'Espanya 5 · Maremagnum 2 樓 · 14 個主廚攤位</em>"]],
+    fold:["波蓋利亞市場要不要也去？","建議<b>拿掉</b>。Santa Caterina 本來就比較好：本地人多、東西便宜、屋頂是那片波浪彩瓦。去了這個再跑去 Rambla 上的 Boqueria 是重複，而且要往西折返再回來。真的想看，9/30 逛街那天順路。"] },
+
+  { d:"2026-09-30", m:"Sep", n:"30", w:"週三", r:"Barcelona → Mallorca", t:"逛街 → 飛馬略卡",
+    tags:["shop","car"], tagTxt:["逛街","移動日"],
+    f:[["上午","整理行李"],
+       ["11:00","<b>退房</b>，行李寄放<em>待跟房東確認</em>"],
+       ["11:00","<b>Passeig de Gràcia 逛街</b><em>週三店都開 · 這趟唯一完整的逛街時段</em>"],
+       ["13:30","拿行李 → 機場<em>走 10 分到 Plaça d'Espanya 搭 Aerobús A2，€7.25／人，有行李架</em>"],
+       ["16:25","<b>FR3070</b> 飛帕爾馬<em>17:25 抵達 · A1 巴士進城 €5，20 分鐘</em>"],
+       ["晚","Santa Catalina 區晚餐"]] },
+
+  { d:"2026-10-01", m:"Oct", n:"1", w:"週四", r:"Mallorca · Palma", t:"高第在馬略卡的作品", isla:true,
+    tags:["hist","art"], tagTxt:["大教堂","王宮"],
+    f:[["上午","<b>La Seu 主教座堂</b> <span class='eur'>€14</span><em>露台另加 €13 · 內部是高第 1904–14 改造的，祭壇上的鍛鐵華蓋是他做的</em>"],
+       ["下午","<b>Palau de l'Almudaina</b> → <b>Sa Llotja</b><em>哥德式商人交易所，螺旋石柱大廳</em>"],
+       ["傍晚","<b>Ca'n Joan de s'Aigo</b><em>1700 年 · ensaïmada 配濃巧克力與杏仁冰</em>"]] },
+
+  { d:"2026-10-02", m:"Oct", n:"2", w:"週五", r:"Mallorca · Palma", t:"市場、美術館、逛街", isla:true,
+    tags:["food","art","shop"], tagTxt:["市場","美術館","逛街"],
+    f:[["09:30","<b>Mercat de Santa Catalina</b><em>本地市場 · 開到 15:00 · 海鮮吧台直接開生蠔</em>"],
+       ["11:30","<b>Es Baluard</b> <span class='eur'>€6</span><em>蓋在文藝復興城牆上 · 露台看整個 Palma 灣 · 週五自由定價</em>"],
+       ["下午","<b>Rialto Living</b> 逛街<em>老戲院改的選物店，島上最好逛</em>"],
+       ["傍晚","<b>Castell de Bellver</b> <span class='eur'>€4</span><em>圓形哥德城堡 · 週日下午免費</em>"]] },
+
+  { d:"2026-10-03", m:"Oct", n:"3", w:"週六", r:"Mallorca · Tramuntana", t:"取車 → Sóller", isla:true,
+    tags:["car","nat","food"], tagTxt:["租車","山線","市集"],
+    f:[["早","取車 → <b>Coll de Sóller</b> 老山路<em>13 個髮夾彎 · 隧道開通後幾乎沒車 · 不要走隧道</em>"],
+       ["午","<b>Sóller 週六市集</b><em>廣場整圈擺攤 · 午餐 Ca'n Boqueta</em>"],
+       ["下午","1913 年木造電車下 <b>Port de Sóller</b>"],
+       ["傍晚","<b>Fornalutx</b><em>石階小村，號稱全西班牙最美之一</em>"],
+       ["住","Sóller 或 Deià"]],
+    fold:["為什麼 Sóller 一定排在週六？","Sóller 的市集<b>只有週六</b>。這是整個 Tramuntana 山線最熱鬧的一天，廣場整圈擺攤。其他天去只剩空廣場跟那台 1913 年的木造電車。"] },
+
+  { d:"2026-10-04", m:"Oct", n:"4", w:"週日", r:"Mallorca · Tramuntana", t:"海岸線與德亞灣", isla:true,
+    tags:["nat","sea","food"], tagTxt:["山線","游泳","一星"],
+    f:[["上午","<b>Valldemossa</b> 的 Reial Cartoixa <span class='eur'>€12.50</span><em>蕭邦與喬治桑 1838 年在此過冬，那台鋼琴還在 · 含 15 分鐘鋼琴演奏</em>"],
+       ["中午","<b>Son Marroig</b> + <b>Sa Foradada</b><em>中間破了一個洞的岩石海岬 · 走下去單程 40 分</em>"],
+       ["下午","<b>Deià</b> + <b>Cala Deià</b> 游泳<em>礫石小灣 · 10 月初海溫約 24°C</em>"],
+       ["晚","<b>Es Racó d'es Teix</b>（米其林一星）<em>要訂 · 或 Sebastian</em>"]] },
+
+  { d:"2026-10-05", m:"Oct", n:"5", w:"週一", r:"Mallorca · 二選一", t:"北部或內陸，然後回 Palma", isla:true,
+    tags:["nat","shop"], tagTxt:["健行","酒莊","outlet"],
+    f:[["路線 A","<b>Pollença</b> 老城<em>爬 365 階的 Calvari 石梯</em>"],
+       ["路線 B","<b>Binissalem</b> 酒莊 + <b>Inca</b> 鞋廠 outlet<em>Camper、Lottusse、Farrutx、Barrats 都在這裡出貨 · 喜歡買東西選這條</em>"],
+       ["傍晚","還車 → 回 Palma<em>隔天 05:45 的班機，住機場旁比較實際</em>"]] },
+
+  { d:"2026-10-06", m:"Oct", n:"6", w:"週二", r:"Mallorca → London", t:"回倫敦", isla:true,
+    tags:["car"], tagTxt:["移動日"],
+    f:[["04:00","出門"],
+       ["05:45","<b>FR26</b> PMI → STN<em>07:20 抵達</em>"]] }
+];
+
+var PLANS = {
+  A: [["上午","<b>Sagrada Família</b> <span class='eur'>€26起 · Hsin</span><em>2026 是高第逝世百年，中央塔今年完工，172.5 公尺，世界最高的教堂</em>"],
+      ["午餐","聖家堂周邊"],
+      ["14:00","<b>Hospital de Sant Pau</b> <span class='eur'>€18／人</span><em>走路 10 分 · 十幾棟磁磚亭子散在花園裡，人潮只有聖家堂的零頭</em>"],
+      ["16:30","<b>Park Güell</b> <span class='eur'>€10 線上</span><em>92 號公車從 Sant Pau 直達 · 要時段票</em>"],
+      ["18:30","<b>Bunkers del Carmel</b> 日落 <span class='free'>免費</span><em>走 25 分 · 262 公尺俯瞰全城 · 日落約 19:50，21:00 封閉</em>"],
+      ["晚餐","Gràcia：<b>La Pepita</b>（Còrsega 343）+ <b>Morreig</b>（Verdi 25）甜點"]],
+  B: [["10:00","<b>加泰隆尼亞音樂宮</b> 自助導覽 <span class='eur'>€16–20／人</span><em>從 9/29 移過來 · 天天開，不受週一休館影響</em>"],
+      ["11:00","<b>Jon Cake</b> + <b>親吻牆</b><em>音樂宮隔壁巷</em>"],
+      ["午餐","老城"],
+      ["14:00","<b>聖家堂外觀 + 誕生立面</b> <span class='free'>免費</span><em>對面 Plaça de Gaudí 的水池倒影</em>"],
+      ["14:45","<b>Hospital de Sant Pau</b> <span class='eur'>€18／人</span><em>走路 10 分</em>"],
+      ["16:30","<b>Park Güell</b> <span class='eur'>€10</span> → <b>Bunkers del Carmel</b> 日落"],
+      ["晚餐","Gràcia：<b>La Pepita</b> + <b>Morreig</b>"]]
+};
+
+var CHECKLIST = [
+  { id:"sf",    t:"Sagrada Família 時段票 ×1",   s:"只買 Hsin 的。百年紀念年最難訂，導覽行程是另一套庫存", p:"€26起", urgent:true },
+  { id:"pg",    t:"Park Güell 時段票 ×2",        s:"9/28 約 16:30 場。線上買省 €3",  p:"€20", urgent:true },
+  { id:"pm",    t:"加泰隆尼亞音樂宮 ×2",           s:"自助導覽即可，選早場。免費只能進一樓 Foyer",  p:"€32–40" },
+  { id:"tf",    t:"再買 2 張 T-familiar",         s:"地鐵站售票機，有中文介面，收信用卡",  p:"€23" },
+  { id:"host",  t:"問房東：9/30 行李寄放、有無電梯", s:"退房 11:00，班機 16:25，中間五個半小時" },
+  { id:"hotel", t:"馬略卡住宿 6 晚",              s:"Palma 3 + Sóller／Deià 2 + 機場旁 1" },
+  { id:"car",   t:"馬略卡租車 10/3–10/5",         s:"淡季小車約 €25–35／天",  p:"€75–105" },
+  { id:"teix",  t:"訂位 Es Racó d'es Teix",       s:"Deià · 米其林一星 · 10/4 晚" },
+  { id:"march", t:"訂位 Ca's Patró March",        s:"Cala Deià 懸崖上 · 午餐" },
+  { id:"boq",   t:"訂位 Ca'n Boqueta",            s:"Sóller · 10/3 午" },
+  { id:"sp",    t:"Hospital de Sant Pau ×2",      s:"現場通常買得到", p:"€36" }
+];
+
+var TODAY = (function(){
+  var d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+})();
+
+function flowHTML(f){
+  return '<li><span class="when">' + f[0] + '</span>' + f[1] + '</li>';
+}
+
+function dayHTML(day){
+  var cls = "tld" + (day.isla ? " isla" : "") + (day.d < TODAY ? " past" : "") + (day.d === TODAY ? " now" : "");
+  var body;
+  if (day.plan){
+    body = '<div class="plansw"><button class="psw" id="pa" aria-pressed="true">A · 搶到票</button>'
+         + '<button class="psw" id="pb" aria-pressed="false">B · 沒搶到</button></div>'
+         + '<ul class="tld-flow" id="planFlow"></ul>';
+  } else {
+    body = '<ul class="tld-flow">' + day.f.map(flowHTML).join("") + '</ul>';
+  }
+  var tags = "";
+  if (day.tags){
+    tags = '<div class="tld-tags">' + day.tags.map(function(t,i){
+      return '<span class="tag ' + t + '">' + day.tagTxt[i] + '</span>';
+    }).join("") + '</div>';
+  }
+  var fold = "";
+  if (day.fold){
+    fold = '<details class="fold"><summary>' + day.fold[0] + '<span class="hint">點開看</span></summary>'
+         + '<div class="fb">' + day.fold[1] + '</div></details>';
+  }
+  return '<div class="' + cls + '">'
+    + '<div class="tld-rail"><div class="tld-badge"><span>' + day.m + '</span><b>' + day.n + '</b></div></div>'
+    + '<div class="tld-main">'
+    + '<div class="tld-region">' + day.r + ' · ' + day.w + '</div>'
+    + '<div class="tld-title">' + day.t + '</div>'
+    + body + tags + fold
+    + '</div></div>';
+}
+
+document.getElementById("tl").innerHTML = DAYS.map(dayHTML).join("");
+
+/* plan switch */
+var planFlow = document.getElementById("planFlow");
+var pa = document.getElementById("pa"), pb = document.getElementById("pb");
+var curPlan = "A";
+try { curPlan = localStorage.getItem("plan928") || "A"; } catch(e){}
+function setPlan(k){
+  curPlan = k;
+  planFlow.innerHTML = PLANS[k].map(flowHTML).join("");
+  pa.setAttribute("aria-pressed", String(k === "A"));
+  pb.setAttribute("aria-pressed", String(k === "B"));
+  try { localStorage.setItem("plan928", k); } catch(e){}
+  renderToday();
+}
+pa.addEventListener("click", function(){ setPlan("A"); });
+pb.addEventListener("click", function(){ setPlan("B"); });
+
+/* today */
+function renderToday(){
+  var day = null, lbl = "Today · 今天", i;
+  for (i = 0; i < DAYS.length; i++){ if (DAYS[i].d === TODAY){ day = DAYS[i]; break; } }
+  if (!day){
+    for (i = 0; i < DAYS.length; i++){ if (DAYS[i].d > TODAY){ day = DAYS[i]; lbl = "Next · 下一站"; break; } }
+  }
+  var kEl = document.getElementById("tdK"), tEl = document.getElementById("tdT"), lEl = document.getElementById("tdL");
+  if (!day){
+    kEl.textContent = "Fin";
+    tEl.textContent = "旅程已經結束";
+    lEl.innerHTML = "";
+    return;
+  }
+  kEl.textContent = lbl + " · " + day.d.slice(5).replace("-", "/") + " " + day.w;
+  tEl.textContent = day.t;
+  var flow = day.plan ? PLANS[curPlan] : day.f;
+  lEl.innerHTML = flow.map(function(f){
+    return '<li><span class="when">' + f[0] + '</span>' + f[1].replace(/<em>[\s\S]*?<\/em>/g, "") + '</li>';
+  }).join("");
+}
+setPlan(curPlan);
+
+/* local helpers */
+function readLocal(k, fb){ try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : fb; } catch(e){ return fb; } }
+function writeLocal(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+
+/* checklist */
+var bkEl = document.getElementById("bk"), bkDot = document.getElementById("bkDot"), bkS = document.getElementById("bkS");
+var chkState = readLocal("chk", {});
+var chkDoc = null;
+function renderChk(){
+  bkEl.innerHTML = CHECKLIST.map(function(c){
+    var on = !!chkState[c.id];
+    var cls = "bk" + (on ? " done" : (c.urgent ? " urgent" : ""));
+    return '<label class="' + cls + '">'
+      + '<input type="checkbox" id="k_' + c.id + '"' + (on ? " checked" : "") + '>'
+      + '<div><h4>' + c.t + '</h4><p>' + c.s + '</p></div>'
+      + '<div class="amt">' + (c.p || "") + '</div></label>';
+  }).join("");
+  CHECKLIST.forEach(function(c){
+    var el = document.getElementById("k_" + c.id);
+    if (el) el.addEventListener("change", function(){ toggleChk(c.id, el.checked); });
+  });
+}
+function toggleChk(id, on){
+  var next = {};
+  Object.keys(chkState).forEach(function(k){ next[k] = chkState[k]; });
+  next[id] = on;
+  chkState = next;
+  renderChk();
+  writeLocal("chk", chkState);
+  if (chkDoc) chkDoc.set({ items: chkState })["catch"](function(){
+    bkS.textContent = "存檔失敗，只存在這支手機"; bkDot.classList.remove("live");
+  });
+}
+renderChk();
+
+/* expenses */
+var xListEl = document.getElementById("xList"), xSumEl = document.getElementById("xSum");
+var xDot = document.getElementById("xDot"), xS = document.getElementById("xS");
+var xItems = readLocal("x", []);
+var xCol = null, RATE = 1.15;
+function esc(s){ var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+function renderX(){
+  if (!xItems.length){
+    xListEl.innerHTML = '<div class="empty">還沒有記錄。上面填一筆加進來。</div>';
+  } else {
+    xListEl.innerHTML = '<div class="scrollx"><table class="ctab"><caption>已記錄的花費</caption>'
+      + '<thead><tr><th>項目</th><th>誰付</th><th>怎麼分</th><th style="text-align:right">金額</th><th></th></tr></thead><tbody>'
+      + xItems.map(function(x){
+          var sp = x.split === "half" ? "均分" : (x.split === "V" ? "V 獨享" : "Hsin 獨享");
+          return '<tr><td>' + esc(x.desc) + '</td>'
+            + '<td class="dt">' + (x.who === "V" ? "V" : "Hsin") + '</td>'
+            + '<td class="dt">' + sp + '</td>'
+            + '<td class="num">' + (x.cur === "GBP" ? "£" : "€") + Number(x.amt).toFixed(2) + '</td>'
+            + '<td style="text-align:right"><button class="del" data-id="' + x.id + '" aria-label="刪除">×</button></td></tr>';
+        }).join("")
+      + '</tbody></table></div>';
+    Array.prototype.forEach.call(xListEl.querySelectorAll(".del"), function(b){
+      b.addEventListener("click", function(){ removeX(b.getAttribute("data-id")); });
+    });
+  }
+  var owe = 0, total = 0;
+  xItems.forEach(function(x){
+    var eur = x.cur === "GBP" ? Number(x.amt) * RATE : Number(x.amt);
+    total += eur;
+    var h = x.split === "half" ? eur / 2 : (x.split === "H" ? eur : 0);
+    if (x.who === "V") owe += h; else owe -= (eur - h);
+  });
+  xSumEl.innerHTML =
+    '<div class="bs"><div class="k">Total</div><div class="v">€' + total.toFixed(2) + '</div><div class="n2">已記錄的總支出</div></div>'
+  + '<div class="bs"><div class="k">Entries</div><div class="v">' + xItems.length + '</div><div class="n2">筆數</div></div>'
+  + '<div class="bs live"><div class="k">' + (owe >= 0 ? "Hsin 欠 V" : "V 欠 Hsin") + '</div><div class="v">€' + Math.abs(owe).toFixed(2) + '</div><div class="n2">結算金額</div></div>';
+}
+function addX(){
+  var dE = document.getElementById("xDesc"), aE = document.getElementById("xAmt");
+  var desc = dE.value.trim(), amt = parseFloat(aE.value);
+  if (!desc || !isFinite(amt) || amt <= 0) return;
+  var rec = { id: String(Date.now()) + Math.random().toString(36).slice(2,7), desc: desc, amt: amt,
+    cur: document.getElementById("xCur").value, who: document.getElementById("xWho").value,
+    split: document.getElementById("xSplit").value, at: new Date().toISOString() };
+  xItems = xItems.concat([rec]);
+  renderX(); writeLocal("x", xItems);
+  dE.value = ""; aE.value = ""; dE.focus();
+  if (xCol) xCol.doc(rec.id).set(rec)["catch"](function(){
+    xS.textContent = "存檔失敗，只存在這支手機"; xDot.classList.remove("live");
+  });
+}
+function removeX(id){
+  xItems = xItems.filter(function(x){ return x.id !== id; });
+  renderX(); writeLocal("x", xItems);
+  if (xCol) xCol.doc(id)["delete"]()["catch"](function(){});
+}
+document.getElementById("xAdd").addEventListener("click", addX);
+document.getElementById("xDesc").addEventListener("keydown", function(e){ if (e.key === "Enter") addX(); });
+document.getElementById("xAmt").addEventListener("keydown", function(e){ if (e.key === "Enter") addX(); });
+renderX();
+
+/* db */
+(function(){
+  var p = null;
+  try { p = window.claude && window.claude.use ? window.claude.use("db") : null; } catch(e){ p = null; }
+  function offline(){ bkS.textContent = "只存在這支手機"; xS.textContent = "只存在這支手機"; }
+  if (!p){ offline(); return; }
+  p.then(function(db){
+    if (!db){ offline(); return; }
+    chkDoc = db.doc("trip/checklist");
+    xCol = db.collection("expenses");
+    chkDoc.onSnapshot(function(s){
+      if (s.exists){ var it = s.data().items; if (it){ chkState = it; renderChk(); writeLocal("chk", chkState); } }
+      bkDot.classList.add("live"); bkS.textContent = "兩支手機同步中";
+    }, function(){ bkDot.classList.remove("live"); bkS.textContent = "同步中斷，只存在這支手機"; });
+    xCol.orderBy("at").onSnapshot(function(s){
+      xItems = s.docs.map(function(d){ var o = d.data() || {};
+        return { id:d.id, desc:o.desc, amt:o.amt, cur:o.cur, who:o.who, split:o.split, at:o.at }; });
+      renderX(); writeLocal("x", xItems);
+      xDot.classList.add("live"); xS.textContent = "兩支手機同步中";
+    }, function(){ xDot.classList.remove("live"); xS.textContent = "同步中斷，只存在這支手機"; });
+  })["catch"](offline);
+})();
+
+/* reveal */
+if (window.IntersectionObserver){
+  document.body.classList.add("anim");
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  Array.prototype.forEach.call(document.querySelectorAll(".reveal"), function(el){ io.observe(el); });
+}
+</script>
+
+</body>
+</html>
