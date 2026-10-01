@@ -285,6 +285,7 @@ body.anim .reveal.in{opacity:1;transform:none}
       <div class="info teal">
         <h4>馬略卡住宿（未訂）</h4>
         <ul>
+          <li><b>現住：Magaluf</b>　<b>不在 Palma，進城要搭 TIB 104，單程 25–40 分</b></li>
           <li>下面是<b>路線推出來的結果</b>，不是排行程的前提。真要改，路線先改</li>
           <li><b>Palma 3 晚</b>　9/30、10/1、10/2 · 老城或 Santa Catalina 區，不用車</li>
           <li><b>Sóller 或 Deià 2 晚</b>　10/3、10/4 · 留得住 Deià 的日落與清晨</li>
@@ -314,7 +315,7 @@ body.anim .reveal.in{opacity:1;transform:none}
         <thead><tr><th>日期</th><th>方位</th><th>區域</th><th>車</th></tr></thead>
         <tbody>
           <tr><td>9/30 三</td><td>西南</td><td>Palma 落地</td><td class="dt">—</td></tr>
-          <tr><td>10/1 四</td><td>西南</td><td>Palma 老城：大教堂、王宮</td><td class="dt">—</td></tr>
+          <tr><td>10/1 四</td><td><b>西北</b></td><td>Valldemossa、Deià、Sóller（大眾運輸）</td><td class="dt">公車+火車</td></tr>
           <tr><td>10/2 五</td><td>西南</td><td>Palma：市場、美術館、逛街</td><td class="dt">—</td></tr>
           <tr><td>10/3 六</td><td><b>西北中段</b></td><td>Sóller、Fornalutx、Port de Sóller</td><td class="num">取車</td></tr>
           <tr><td>10/4 日</td><td><b>西北南段</b></td><td>Valldemossa、Sa Foradada、Deià + Cala Deià</td><td class="num">開車</td></tr>
@@ -541,6 +542,8 @@ body.anim .reveal.in{opacity:1;transform:none}
         <h4>馬略卡</h4>
         <ul>
           <li><b>Cap de Formentor</b>　5/15–10/15 每天 10:00–22:00 禁私家車進 Ma-2210，罰 €100–200。要去只能 10:00 前到或搭接駁巴士</li>
+          <li><b>TIB 203 公車</b>　平日 06:05–20:40，<b>每 60–80 分才一班</b>。有些班次只到 Valldemossa 就折返，上車前要確認跑全程</li>
+          <li><b>索列爾火車末班</b>　Sóller → Palma 18:30（19:30 到）。錯過只能搭 TIB 204 走隧道</li>
           <li><b>Caló des Moro</b>　6/1 起非本地車輛禁止進入聯外道路，要停 Cala Llombards 走 1.5 公里。10 月初是否解除要現場確認</li>
           <li><b>Mercat de Santa Catalina</b>　週一到週六只開到 15:00</li>
           <li><b>Tramuntana 山路</b>　窄、會車要退，但路況好。Coll de Sóller 有 13 個髮夾彎</li>
@@ -608,11 +611,18 @@ var DAYS = [
        ["16:25","<b>FR3070</b> 飛帕爾馬<em>17:25 抵達 · A1 巴士進城 €5，20 分鐘</em>"],
        ["晚","Santa Catalina 區晚餐"]] },
 
-  { d:"2026-10-01", m:"Oct", n:"1", w:"週四", r:"西南 · Palma · 無車", t:"高第在馬略卡的作品", isla:true,
-    tags:["hist","art"], tagTxt:["大教堂","王宮"],
-    f:[["上午","<b>La Seu 主教座堂</b> <span class='eur'>€14</span><em>露台另加 €13 · 內部是高第 1904–14 改造的，祭壇上的鍛鐵華蓋是他做的</em>"],
-       ["下午","<b>Palau de l'Almudaina</b> → <b>Sa Llotja</b><em>哥德式商人交易所，螺旋石柱大廳</em>"],
-       ["傍晚","<b>Ca'n Joan de s'Aigo</b><em>1700 年 · ensaïmada 配濃巧克力與杏仁冰</em>"]] },
+  { d:"2026-10-01", m:"Oct", n:"1", w:"週四", r:"西北 · Tramuntana · 大眾運輸", t:"Valldemossa → Deià → Sóller", isla:true,
+    tags:["nat","hist","car"], tagTxt:["山線","公車","古董火車"],
+    f:[["08:00","<b>TIB 104</b>　Magaluf → Palma<em>車程 25–40 分 · 終點 Estació Intermodal，203 公車與索列爾火車都在同一棟</em>"],
+       ["09:00","<b>TIB 203</b> → Valldemossa<em>約 30 分 · 上車前確認這班跑全程，有些只到 Valldemossa 就折返</em>"],
+       ["09:35","<b>Valldemossa</b> <span class='eur'>€12.50</span><em>Reial Cartoixa 皇家修道院：蕭邦與喬治桑 1838–39 年在此過冬，那台 Pleyel 鋼琴還在，票含 15 分鐘現場鋼琴演奏 · 同票可進 14 世紀的 Palau del Rei Sanç · 名產 coca de patata 配杏仁奶</em>"],
+       ["11:30","<b>TIB 203</b> → Deià<em>約 25 分</em>"],
+       ["12:00","<b>Deià</b><em>掛在山壁上的赭色石頭村 · 爬到最高點的 Sant Joan Baptista 墓園，詩人 Robert Graves 葬在這裡，墓碑只寫 Poeta · 故居 Ca N'Alluny 可進去看書房 · Cala Deià 來回 1.5 小時，下坡 20 分回程上坡，想游泳就得放棄故居</em>"],
+       ["14:30","<b>TIB 203</b> → Sóller<em>約 25 分</em>"],
+       ["15:00","<b>Sóller</b><em>Sant Bartomeu 教堂的正立面是高第徒弟 Joan Rubió 設計的，旁邊 Banco de Sóller 同一人，鍛鐵欄杆值得看 · Can Prunera 現代主義博物館裡有畢卡索、米羅、克林姆 · 時間夠可搭 1913 年木造電車去 Port de Sóller，€10 單程，來回含停留要 2 小時</em>"],
+       ["18:30","<b>索列爾古董火車</b> → Palma <span class='eur'>€23</span><em>1912 年，60 分鐘 · 這是末班，錯過只能搭 TIB 204 走隧道</em>"],
+       ["19:40","<b>TIB 104</b> → Magaluf<em>約 20:20 回到住處</em>"]],
+    fold:["203 公車是今天唯一的瓶頸","<b>每 60–80 分鐘才一班</b>（平日 06:05–20:40）。三段接駁如果都沒接好，光等車就可能吃掉 3 小時。<b>出門前必查實際發車時間</b>：TIB 官方 App，或到 Estació Intermodal 看電子看板。<br><br><b>火車回程時刻（官網確認過）</b>：Sóller → Palma 09:00 / 12:15 / 14:00 / 17:15※ / 18:30。※ 那班官網註明要向售票口確認。<br><br><b>出門晚了就砍</b>：09:00–11:00 出發 → 砍 Valldemossa，直接去 Deià；11:00 後出發 → 只做 Sóller，搭 13:30 的火車去，18:30 回。<br><br><b>降低風險的替代走法</b>：順序反過來，搭 10:10 的火車先到 Sóller，再用 203 一路 Sóller → Deià → Valldemossa → Palma。末班 203 是 20:40，比末班火車 18:30 晚兩小時，容錯空間大很多。<br><br><b>今天車錢</b>：TIB 104 來回約 €5–8、203 三段約 €6–11、火車單程 €23，合計約 €34–42／人。<br><br><b>Palma 老城（La Seu、Almudaina、Sa Llotja）順延</b>，之後再找一天。"] },
 
   { d:"2026-10-02", m:"Oct", n:"2", w:"週五", r:"西南 · Palma · 無車", t:"市場、美術館、逛街", isla:true,
     tags:["food","art","shop"], tagTxt:["市場","美術館","逛街"],
